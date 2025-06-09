@@ -65,14 +65,14 @@ Project source code is divided into two parts, package `user` && `util`.
 
 This project requires [JDK 21](https://whichjdk.com/) to be installed on the system.
 
-![](version.png)
+![](assets/version.png)
 Before running any commands, check if the correct JDK version is installed on the system by typing:
 
 ```bash
 java --version
 ```
 
-![](run.gif)
+![](assets/run.gif)
 
 If everything looks good, we can move on to build the project from source.
 
@@ -93,7 +93,7 @@ cd <project-root>
 
 ## How to run the tests
 
-![](test.gif)
+![](assets/test.gif)
 
 When using `mvn install` Maven already automatically ran all the test files before building from source.
 However, if one wishes to only run the test files,
