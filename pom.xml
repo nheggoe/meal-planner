@@ -4,25 +4,26 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>edu.ntnu.idi.bidata</groupId>
-    <artifactId>IDATG1003-Mappe-meal-planning</artifactId>
+    <groupId>dev.nheggoe</groupId>
+    <artifactId>meal-planner</artifactId>
     <version>1.0.1</version>
 
     <properties>
-        <!-- Per Sept 2024 the LTS version is 21 -->
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <java.version>21</java.version>
+        <junit.version>5.11.2</junit.version>
+        <mainClass>dev.nheggoe.mealplanner.Launcher</mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.11.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
+        <defaultGoal>clean install exec:java</defaultGoal>
         <plugins>
             <!-- Allows to use `mvn exec:java` -->
             <plugin>
@@ -30,7 +31,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.5.0</version>
                 <configuration>
-                    <mainClass>dev.nheggoe.mealplanner.Launcher</mainClass>
+                    <mainClass>${mainClass}</mainClass>
                 </configuration>
             </plugin>
             <!-- Tell the compiler to use java 21 -->
@@ -39,7 +40,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>
                 <configuration>
-                    <release>21</release>
+                    <release>${java.version}</release>
                 </configuration>
             </plugin>
         </plugins>

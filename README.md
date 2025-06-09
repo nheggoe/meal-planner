@@ -6,81 +6,53 @@ The goal of this project was to help achieve the UN's sustainability goal by red
 
 ## Project structure
 
-```aiignore
-.
-├── README.md
-├── pom.xml
-├── run.gif
-├── src
-│   ├── main
-│   │   └── java
-│   │       └── edu
-│   │           └── ntnu
-│   │               └── idi
-│   │                   └── bidata
-│   │                       ├── Launcher.java
-│   │                       ├── user
-│   │                       │   ├── Printable.java
-│   │                       │   ├── User.java
-│   │                       │   ├── inventory
-│   │                       │   │   ├── Ingredient.java
-│   │                       │   │   ├── IngredientStorage.java
-│   │                       │   │   ├── InventoryManager.java
-│   │                       │   │   └── Measurement.java
-│   │                       │   └── recipe
-│   │                       │       ├── CookBook.java
-│   │                       │       ├── Recipe.java
-│   │                       │       ├── RecipeBuilder.java
-│   │                       │       ├── RecipeManager.java
-│   │                       │       └── Step.java
-│   │                       └── util
-│   │                           ├── AbortException.java
-│   │                           ├── Application.java
-│   │                           ├── InputScanner.java
-│   │                           ├── OutputHandler.java
-│   │                           ├── Utility.java
-│   │                           ├── command
-│   │                           │   ├── AddCommand.java
-│   │                           │   ├── ClearCommand.java
-│   │                           │   ├── Command.java
-│   │                           │   ├── CommandRegistry.java
-│   │                           │   ├── ExitCommand.java
-│   │                           │   ├── FindCommand.java
-│   │                           │   ├── GoCommand.java
-│   │                           │   ├── HelpCommand.java
-│   │                           │   ├── IllegalCommandCombinationException.java
-│   │                           │   ├── ListCommand.java
-│   │                           │   ├── RemoveCommand.java
-│   │                           │   ├── StatsCommand.java
-│   │                           │   ├── UnknownCommand.java
-│   │                           │   └── ValidCommand.java
-│   │                           ├── input
-│   │                           │   ├── CommandInput.java
-│   │                           │   └── UnitInput.java
-│   │                           └── unit
-│   │                               ├── UnitConverter.java
-│   │                               ├── UnitRegistry.java
-│   │                               └── ValidUnit.java
-│   └── test
-│       └── java
-│           └── edu
-│               └── ntnu
-│                   └── idi
-│                       └── bidata
-│                           ├── user
-│                           │   └── inventory
-│                           │       ├── IngredientStorageTest.java
-│                           │       └── IngredientTest.java
-│                           └── util
-│                               ├── InputScannerTest.java
-│                               ├── command
-│                               │   └── RemoveCommandTest.java
-│                               └── unit
-│                                   └── UnitConverterTest.java
-├── unitTest.gif
-└── version.png
+```
+mealplanner
+├── Launcher.java
+├── user
+│   ├── Printable.java
+│   ├── User.java
+│   ├── inventory
+│   │   ├── Ingredient.java
+│   │   ├── IngredientStorage.java
+│   │   ├── InventoryManager.java
+│   │   └── Measurement.java
+│   └── recipe
+│       ├── CookBook.java
+│       ├── Recipe.java
+│       ├── RecipeBuilder.java
+│       ├── RecipeManager.java
+│       └── Step.java
+└── util
+    ├── AbortException.java
+    ├── InputScanner.java
+    ├── MealPlanner.java
+    ├── OutputHandler.java
+    ├── Utility.java
+    ├── command
+    │   ├── AddCommand.java
+    │   ├── ClearCommand.java
+    │   ├── Command.java
+    │   ├── CommandRegistry.java
+    │   ├── ExitCommand.java
+    │   ├── FindCommand.java
+    │   ├── GoCommand.java
+    │   ├── HelpCommand.java
+    │   ├── IllegalCommandCombinationException.java
+    │   ├── ListCommand.java
+    │   ├── RemoveCommand.java
+    │   ├── StatsCommand.java
+    │   ├── UnknownCommand.java
+    │   └── ValidCommand.java
+    ├── input
+    │   ├── CommandInput.java
+    │   └── UnitInput.java
+    └── unit
+        ├── UnitConverter.java
+        ├── UnitRegistry.java
+        └── ValidUnit.java
 
-26 directories, 46 files
+8 directories, 36 files
 ```
 
 In a Maven project, the source code and unit tests are kept in different directories.
@@ -99,20 +71,13 @@ Project source code is divided into two parts, package `user` && `util`.
 
 ## How to run the project
 
-This project requires [Java SE 21](https://whichjdk.com/),
-and [Apache Maven 3.9.x](https://maven.apache.org/) to be installed on the system.
+This project requires [JDK 21](https://whichjdk.com/) to be installed on the system.
 
 ![](version.png)
-Before running any commands, check if the correct version is installed on the system by typing:
+Before running any commands, check if the correct JDK version is installed on the system by typing:
 
 ```bash
 java --version
-```
-
-and
-
-```bash
-mvn --version
 ```
 
 ![](run.gif)
@@ -125,13 +90,13 @@ where it creates a `new Application` and invoke the `run()` method.
 1. Go to the project directory.
 
 ```bash
-cd {{PATH_TO_ROOT_DIRECTORY}}
+cd <project-root>
 ```
 
 2. Run the following command in the terminal to build and run the project.
 
 ```bash
-mvn -q clean install && mvn -q exec:java
+./mvnw -q
 ```
 
 ## How to run the tests
@@ -143,7 +108,7 @@ However, if one wishes to only run the test files,
 Maven allows simply running
 
 ```bash
-mvn test
+./mvnw test
 ```
 
 in the terminal while in the project root directory,
