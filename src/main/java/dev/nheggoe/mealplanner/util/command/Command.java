@@ -5,8 +5,8 @@ import dev.nheggoe.mealplanner.user.User;
 import dev.nheggoe.mealplanner.user.inventory.IngredientStorage;
 import dev.nheggoe.mealplanner.user.inventory.InventoryManager;
 import dev.nheggoe.mealplanner.user.recipe.RecipeManager;
-import dev.nheggoe.mealplanner.util.Application;
 import dev.nheggoe.mealplanner.util.InputScanner;
+import dev.nheggoe.mealplanner.util.MealPlanner;
 import dev.nheggoe.mealplanner.util.OutputHandler;
 import dev.nheggoe.mealplanner.util.input.CommandInput;
 import java.util.List;
@@ -39,7 +39,7 @@ public abstract class Command {
    * @param app The application context needed for specific commands like EXIT.
    * @return An appropriate Command subclass instance based on the user's input.
    */
-  public static Command of(User user, Application app) {
+  public static Command of(User user, MealPlanner app) {
     ValidCommand command = user.getCommandInput().getCommand();
     return switch (command) {
       case HELP -> new HelpCommand(user);

@@ -1,7 +1,7 @@
 package dev.nheggoe.mealplanner.util.command;
 
 import dev.nheggoe.mealplanner.user.User;
-import dev.nheggoe.mealplanner.util.Application;
+import dev.nheggoe.mealplanner.util.MealPlanner;
 
 /**
  * The ExitCommand class is responsible for terminating the application upon execution. It extends
@@ -12,7 +12,7 @@ import dev.nheggoe.mealplanner.util.Application;
  */
 public class ExitCommand extends Command {
 
-  private final Application app;
+  private final MealPlanner app;
 
   /**
    * Constructs a new ExitCommand object, which terminates the application when executed.
@@ -20,7 +20,7 @@ public class ExitCommand extends Command {
    * @param user The user associated with the command.
    * @param app The application instance that will be terminated upon execution.
    */
-  public ExitCommand(User user, Application app) {
+  public ExitCommand(User user, MealPlanner app) {
     super(user);
     this.app = app;
   }

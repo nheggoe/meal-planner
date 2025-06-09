@@ -19,7 +19,8 @@ import java.util.List;
  * @author Nick Heggø
  * @version 2024-12-12
  */
-public class Application {
+public class MealPlanner {
+
   private final User user;
   private final InputScanner inputScanner;
   private final OutputHandler outputHandler;
@@ -29,7 +30,7 @@ public class Application {
    * Initializes a new instance of the Application Sets up the user, input scanner, and output
    * handler.
    */
-  public Application() {
+  public MealPlanner() {
     user = userSetup();
     inputScanner = user.getInputScanner();
     outputHandler = user.getOutputHandler();
