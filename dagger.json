@@ -1,0 +1,8 @@
+{
+  "name": "maven-java-builder",
+  "engineVersion": "v0.18.9",
+  "sdk": {
+    "source": "java"
+  },
+  "source": ".dagger"
+}
