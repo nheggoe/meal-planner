@@ -55,19 +55,11 @@ mealplanner
 8 directories, 36 files
 ```
 
-In a Maven project, the source code and unit tests are kept in different directories.
-The source code is located in `src/main`, while test code is located in `src/test`.
-
 Project source code is divided into two parts, package `user` && `util`.
 
 * In the package `user` you can find all the relevant classes that have dependency on the `User` class.
 * In the package `util` you can find all the application's helper class and command
   layer.
-
-## Link to repository
-
-[GitHub Repository](https://github.com/NTNU-BIDATA-IDATG1003-2024/meal-planning-nickhe-ntnu.git)
-[BackUP Repository](https://github.com/nickhe-ntnu/Meal-Planning-Java.git)
 
 ## How to run the project
 
