@@ -1,8 +1,7 @@
-package edu.ntnu.idi.bidata.user.inventory;
+package dev.nheggoe.mealplanner.user.inventory;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import dev.nheggoe.mealplanner.user.inventory.Ingredient;
 import dev.nheggoe.mealplanner.util.unit.UnitConverter;
 import dev.nheggoe.mealplanner.util.unit.ValidUnit;
 import org.junit.jupiter.api.BeforeEach;

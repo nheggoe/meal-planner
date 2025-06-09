@@ -1,10 +1,8 @@
-package edu.ntnu.idi.bidata.util;
+package dev.nheggoe.mealplanner.util;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import dev.nheggoe.mealplanner.util.AbortException;
-import dev.nheggoe.mealplanner.util.InputScanner;
 import dev.nheggoe.mealplanner.util.command.ValidCommand;
 import dev.nheggoe.mealplanner.util.input.CommandInput;
 import dev.nheggoe.mealplanner.util.input.UnitInput;
