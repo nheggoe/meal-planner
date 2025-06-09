@@ -165,10 +165,8 @@ public class UnitConverter {
         case G -> convertToGrams(measurement);
         default ->
             throw new IllegalArgumentException(
-                "Illegal operation: cannot convert from "
-                    + measurement.getUnit()
-                    + " to "
-                    + targetUnit);
+                "Illegal operation: cannot convert from %s to %s"
+                    .formatted(measurement.getUnit(), targetUnit));
       }
     }
   }

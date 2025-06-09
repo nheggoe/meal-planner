@@ -147,19 +147,8 @@ public class Ingredient implements Printable {
 
   private String getString() {
     int dayTilExpiry = getDaysBetween(this.getExpiryDate());
-    return "  - "
-        + getName()
-        + ": "
-        + getAmount()
-        + " "
-        + getUnit()
-        + " - Best before: "
-        + expiryDate
-        + " (in "
-        + dayTilExpiry
-        + " days) Value: "
-        + getValue()
-        + " kr";
+    return "  - %s: %s %s - Best before: %s (in %d days) Value: %s kr"
+        .formatted(getName(), getAmount(), getUnit(), expiryDate, dayTilExpiry, getValue());
   }
 
   /**
@@ -170,19 +159,8 @@ public class Ingredient implements Printable {
    */
   private String getExpiredString() {
     int daysExpired = Math.abs(getDaysBetween(this.getExpiryDate()));
-    return "  * "
-        + getName()
-        + ": "
-        + getAmount()
-        + " "
-        + getUnit()
-        + " - Best before: "
-        + expiryDate
-        + " (Expired "
-        + daysExpired
-        + " days ago) Value: "
-        + getValue()
-        + " kr";
+    return "  * %s: %s %s - Best before: %s (Expired %d days ago) Value: %s kr"
+        .formatted(getName(), getAmount(), getUnit(), expiryDate, daysExpired, getValue());
   }
 
   /**

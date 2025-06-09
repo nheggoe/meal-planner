@@ -23,12 +23,8 @@ public class IllegalCommandCombinationException extends RuntimeException {
    */
   public IllegalCommandCombinationException(ValidCommand command, String subcommand) {
     super(
-        "Invalid command combination: '"
-            + Utility.createKey(command.name())
-            + "' + '"
-            + subcommand
-            + "'");
-    // Invalid command combination: '{command}' + '{subcommand}'
+        "Invalid command combination: '%s' + '%s'"
+            .formatted(Utility.createKey(command.name()), subcommand));
   }
 
   /**
@@ -38,12 +34,6 @@ public class IllegalCommandCombinationException extends RuntimeException {
    * @param commandInput the input containing the main command and subcommand
    */
   public IllegalCommandCombinationException(CommandInput commandInput) {
-    super(
-        "Invalid command combination: '"
-            + Utility.createKey(commandInput.getCommand().name())
-            + "' + '"
-            + commandInput.getSubcommand()
-            + "'");
-    // Invalid command combination: '{command}' + '{subcommand}'
+    this(commandInput.getCommand(), commandInput.getSubcommand());
   }
 }

@@ -121,11 +121,8 @@ public class OutputHandler {
     } else if (style.strip().equalsIgnoreCase("suffix")) {
       for (int index = 0; index < listToPrint.size(); index++) {
         printOutput(
-            " "
-                + (index + 1)
-                + Utility.getOrdinalSuffix(index + 1)
-                + ": "
-                + listToPrint.get(index));
+            " %d%s: %s"
+                .formatted(index + 1, Utility.getOrdinalSuffix(index + 1), listToPrint.get(index)));
       }
     }
   }
