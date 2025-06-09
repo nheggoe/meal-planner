@@ -1,15 +1,16 @@
 package edu.ntnu.idi.bidata.util.unit;
 
-import edu.ntnu.idi.bidata.user.inventory.Measurement;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import dev.nheggoe.mealplanner.user.inventory.Measurement;
+import dev.nheggoe.mealplanner.util.unit.UnitConverter;
+import dev.nheggoe.mealplanner.util.unit.ValidUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 /**
- * Unit tests for the UnitConverter class.
- * This class contains various test methods to verify the correct
- * functionality of unit conversion methods within the UnitConverter class.
+ * Unit tests for the UnitConverter class. This class contains various test methods to verify the
+ * correct functionality of unit conversion methods within the UnitConverter class.
  *
  * @author Nick Heggø
  * @version 2024-12-05

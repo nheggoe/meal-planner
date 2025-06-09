@@ -30,7 +30,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.5.0</version>
                 <configuration>
-                    <mainClass>edu.ntnu.idi.bidata.Launcher</mainClass>
+                    <mainClass>dev.nheggoe.mealplanner.Launcher</mainClass>
                 </configuration>
             </plugin>
             <!-- Tell the compiler to use java 21 -->

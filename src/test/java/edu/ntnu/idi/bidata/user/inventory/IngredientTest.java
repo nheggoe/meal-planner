@@ -1,12 +1,12 @@
 package edu.ntnu.idi.bidata.user.inventory;
 
-import edu.ntnu.idi.bidata.util.unit.UnitConverter;
-import edu.ntnu.idi.bidata.util.unit.ValidUnit;
+import static org.junit.jupiter.api.Assertions.*;
+
+import dev.nheggoe.mealplanner.user.inventory.Ingredient;
+import dev.nheggoe.mealplanner.util.unit.UnitConverter;
+import dev.nheggoe.mealplanner.util.unit.ValidUnit;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Test class for the Ingredient class.
@@ -51,6 +51,6 @@ class IngredientTest {
   void testEquals() {
     Ingredient ingredient1 = new Ingredient("test", 3.3f, ValidUnit.KG, 70.0f, 4);
     Ingredient ingredient2 = new Ingredient("test", 3.3f, ValidUnit.KG, 70.0f, 4);
-    assertEquals(true, ingredient1.equals(ingredient2));
+    assertEquals(ingredient1, ingredient2);
   }
 }

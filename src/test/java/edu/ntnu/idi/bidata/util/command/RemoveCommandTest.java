@@ -1,9 +1,9 @@
 package edu.ntnu.idi.bidata.util.command;
 
-import edu.ntnu.idi.bidata.user.User;
-import edu.ntnu.idi.bidata.user.inventory.Ingredient;
-import edu.ntnu.idi.bidata.user.inventory.InventoryManager;
-import edu.ntnu.idi.bidata.util.unit.ValidUnit;
+import dev.nheggoe.mealplanner.user.User;
+import dev.nheggoe.mealplanner.user.inventory.Ingredient;
+import dev.nheggoe.mealplanner.user.inventory.InventoryManager;
+import dev.nheggoe.mealplanner.util.unit.ValidUnit;
 import org.junit.jupiter.api.BeforeEach;
 
 class RemoveCommandTest {
@@ -19,6 +19,7 @@ class RemoveCommandTest {
     testInventoryManager = testUser.getInventoryManager();
     testInventoryManager.createIngredientStorage(storageName);
     testInventoryManager.setCurrentStorage(storageName);
-    testInventoryManager.addIngredientToCurrentStorage(new Ingredient(ingredientName, 200, ValidUnit.G, 23, 23));
+    testInventoryManager.addIngredientToCurrentStorage(
+        new Ingredient(ingredientName, 200, ValidUnit.G, 23, 23));
   }
 }

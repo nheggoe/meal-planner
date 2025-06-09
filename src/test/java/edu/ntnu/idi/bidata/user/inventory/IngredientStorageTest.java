@@ -1,16 +1,17 @@
 package edu.ntnu.idi.bidata.user.inventory;
 
-import edu.ntnu.idi.bidata.util.unit.ValidUnit;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
+import dev.nheggoe.mealplanner.user.inventory.Ingredient;
+import dev.nheggoe.mealplanner.user.inventory.IngredientStorage;
+import dev.nheggoe.mealplanner.util.unit.ValidUnit;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.time.LocalDate;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author Nick Heggø

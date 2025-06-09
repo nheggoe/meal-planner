@@ -1,21 +1,22 @@
 package edu.ntnu.idi.bidata.util;
 
-import edu.ntnu.idi.bidata.util.command.ValidCommand;
-import edu.ntnu.idi.bidata.util.input.CommandInput;
-import edu.ntnu.idi.bidata.util.input.UnitInput;
-import edu.ntnu.idi.bidata.util.unit.ValidUnit;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
-
-import java.io.ByteArrayInputStream;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import dev.nheggoe.mealplanner.util.AbortException;
+import dev.nheggoe.mealplanner.util.InputScanner;
+import dev.nheggoe.mealplanner.util.command.ValidCommand;
+import dev.nheggoe.mealplanner.util.input.CommandInput;
+import dev.nheggoe.mealplanner.util.input.UnitInput;
+import dev.nheggoe.mealplanner.util.unit.ValidUnit;
+import java.io.ByteArrayInputStream;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
+
 /**
- * The InputScannerTest class contains unit tests for the InputScanner class.
- * These tests validate the methods for reading and interpreting user input
- * from various input streams, ensuring correct functionality and handling of edge cases.
+ * The InputScannerTest class contains unit tests for the InputScanner class. These tests validate
+ * the methods for reading and interpreting user input from various input streams, ensuring correct
+ * functionality and handling of edge cases.
  *
  * @author Nick Heggø
  * @version 2024-11-30
@@ -36,7 +37,9 @@ class InputScannerTest {
 
   @Test
   void testNextLine() {
-    System.setIn(new ByteArrayInputStream("lISt   testSuBcOmmand    test   uSEr iNput stRing   ".getBytes()));
+    System.setIn(
+        new ByteArrayInputStream(
+            "lISt   testSuBcOmmand    test   uSEr iNput stRing   ".getBytes()));
     InputScanner inputScanner = new InputScanner();
     assertEquals("lISt   testSuBcOmmand    test   uSEr iNput stRing", inputScanner.nextLine());
   }
@@ -78,7 +81,9 @@ class InputScannerTest {
 
   @Test
   void testFetchCommand() {
-    System.setIn(new ByteArrayInputStream("lISt   testSuBcOmmand    test   uSEr iNput stRing   ".getBytes()));
+    System.setIn(
+        new ByteArrayInputStream(
+            "lISt   testSuBcOmmand    test   uSEr iNput stRing   ".getBytes()));
     InputScanner inputScanner = new InputScanner();
     CommandInput commandInput = inputScanner.fetchCommand();
     assertEquals(ValidCommand.LIST, commandInput.getCommand());
