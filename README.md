@@ -93,7 +93,7 @@ cd <project-root>
 
 ## How to run the tests
 
-![](unitTest.gif)
+![](test.gif)
 
 When using `mvn install` Maven already automatically ran all the test files before building from source.
 However, if one wishes to only run the test files,
